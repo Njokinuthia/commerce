@@ -23,10 +23,7 @@ const Signup = () => {
       }),
     })
       .then(resp => resp.json())
-      .then(data => console.table(data))
-      // .catch((error) => {
-      //   console.log("your error:" + error)
-      // })
+      .then(data => console.table(data))      
   }
 
   function handleSubmit(event) {
@@ -41,6 +38,7 @@ const Signup = () => {
         <h5 className=''>Sign Up</h5>
         <div>
           <div >
+            <label htmlFor="email">Email:</label>
             <input type="email"
               placeholder="Email Address"
               value={signUpEmail}
@@ -48,12 +46,14 @@ const Signup = () => {
               required />
           </div>
           <div>
+            <label htmlFor="username">Username:</label>
             <input type="text"
               placeholder="Username"
               value={signUpName}
               onChange={e => setSignUpName(e.target.value)} required />
           </div>
           <div>
+            <label htmlFor="password">Password:</label>
             <input type="password"
               placeholder="Password"
               value={signUpPassword}
