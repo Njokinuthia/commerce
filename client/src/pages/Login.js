@@ -35,6 +35,7 @@ const Login = () => {
 
   return (
     <div>
+    <Navbar/>
       <form onSubmit={handleSubmit} className="formContainer login">
         <h5 className='green'>Login</h5>
         <div>
