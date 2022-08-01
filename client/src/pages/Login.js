@@ -39,6 +39,7 @@ const Login = () => {
         <h5 className='green'>Login</h5>
         <div>
           <div>
+            <label htmlFor="username">Username:</label>
             <input type="text"
               placeholder="username"
               value={logInName}
@@ -46,6 +47,7 @@ const Login = () => {
               required />
           </div>
           <div>
+            <label htmlFor="password">Password:</label>
             <input type="password"
               placeholder="Password"
               value={logInPassword}
@@ -56,7 +58,6 @@ const Login = () => {
         <p>Don't have an account?<span className="" onClick={toggleForms}>Sign Up</span></p>
         <button type="submit" className="">Submit</button>
       </form>
-
     </div>
   )
 }
