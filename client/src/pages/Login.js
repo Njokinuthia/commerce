@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
-const Login = () => {
+const Login = ({getUserData}) => {
   let navigate = useNavigate();
   const [logInName, setLogInName] = useState("")
   const [logInPassword, setLogInPassword] = useState("")
@@ -20,7 +20,10 @@ const Login = () => {
       }),
     })
       .then(resp => resp.json())
-      .then(data => console.log(data))
+      .then(data => {        
+        // console.log(data)
+        getUserData(data)
+      })
   }
 
 

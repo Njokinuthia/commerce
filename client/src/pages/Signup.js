@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Navbar from '../components/Navbar'
 
-const Signup = () => {
+const Signup = ({getUserData}) => {
   let navigate = useNavigate();
   const [signUpEmail, setSignUpEmail] = useState("")
   const [signUpPassword, setSignUpPassword] = useState("")
@@ -25,7 +25,10 @@ const Signup = () => {
       }),
     })
       .then(resp => resp.json())
-      .then(data => console.table(data))
+      .then(data => { 
+        // console.log(data)
+        getUserData(data)
+      })
   }
 
   function handleSubmit(event) {
