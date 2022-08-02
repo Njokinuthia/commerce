@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
 
-  # resources :users
+  resources :items
+  resources :users, only: [:index]
+
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 
