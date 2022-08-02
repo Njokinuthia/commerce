@@ -8,11 +8,20 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create!(item_params)
-    byebug
+    item = Item.create!(item_params)    
     render json: item
+  end
 
+  def update
+    item = Item.find_by(id: params[:id])   
+    item.update(item_params)
+    render json: item
+  end
 
+  def destroy
+    item = Item.find_by(id: params[:id])   
+    item.destroy
+    head :no_content
   end
  
   private
