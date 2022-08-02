@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Navbar from '../components/Navbar'
 
 const Signup = ({getUserData}) => {
@@ -40,7 +40,7 @@ const Signup = ({getUserData}) => {
     <div>
       <Navbar />
       <div className='grid justify-items-center'>
-        <FontAwesomeIcon icon={['fas', 'faCoffee']} />
+        {/* <FontAwesomeIcon icon={['fas', 'faCoffee']} /> */}
 
         <form onSubmit={handleSubmit} className="">
           <h5 className=''>Sign Up</h5>

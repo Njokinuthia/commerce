@@ -12,9 +12,10 @@ class UsersController < ApplicationController
     render json: user, status: :created
   end
 
-  # autolog in already logged in user - not working
+  # autolog in already logged in user - not working /me
   def show    
     user = User.find_by(id: session[:user_id])
+    # byebug
     if user
      render json: user
     else
