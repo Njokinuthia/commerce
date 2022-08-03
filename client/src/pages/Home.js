@@ -14,7 +14,7 @@ const Home = () => {
             <button>Shop Now</button>
           </div>
           <div>
-            <img src="" alt="Right Image"></img>
+            <img src="" alt="Right"></img>
           </div>
         </div>
         <div className='flex flex-row justify-between'>

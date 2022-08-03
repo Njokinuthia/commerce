@@ -3,17 +3,18 @@ import { useState } from 'react';
 
 
 const Adpage = ({ user }) => {
-  console.log(user)
-  console.log(user.id)
+
+  // console.log(user.id)
+ 
+  // console.log(user)
 
   const [newAd, setNewAd] = useState({
     category: "",   
     image_url: "",
     condition: "",
-    price: "",
-    details: "",
+    price: "",   
     description: "",
-    seller_id: ""
+    user_id: ""
   });
 
   function handleChange(event) {
@@ -21,7 +22,7 @@ const Adpage = ({ user }) => {
     const value = event.target.value;
     console.log(event.target.value)
     setNewAd({
-      ...newAd, [name]: value, seller_id:user.id
+      ...newAd, [name]: value, user_id:user.id
     });
   }
  
@@ -37,7 +38,7 @@ const Adpage = ({ user }) => {
       body: JSON.stringify(newAd),
     })
       .then(resp => resp.json())
-      .then(data => console.table(data))
+      .then(data => console.log(data))
       .catch((error) => {
         console.log("your error:" + error)
       })
@@ -46,13 +47,10 @@ const Adpage = ({ user }) => {
       category: "",
       image_url: "",
       condition: "",
-      price: "",
-      details: "",
+      price: "",     
       description: "",
-      seller_id: ""
+      user_id: ""
     })
-
-
   }
 
 
@@ -64,9 +62,7 @@ const Adpage = ({ user }) => {
             <div>
               <input type="text" placeholder="Category" name="category" value={newAd.category} onChange={handleChange} required />
             </div>
-            <div>
-              <input type="text" placeholder="Item Name" name="details" value={newAd.details} onChange={handleChange} required />
-            </div>
+           
             <div>
               <input type="text" placeholder="Item Condition" name="condition" value={newAd.condition} onChange={handleChange} required />
             </div>
