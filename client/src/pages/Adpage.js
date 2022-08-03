@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import Navbar from '../components/Navbar'
+
 
 
 const Adpage = ({ user }) => {
@@ -56,6 +58,7 @@ const Adpage = ({ user }) => {
 
   return (
     <div>
+      <Navbar/>
       <form className='' onSubmit={handleSubmit}>
         <div className='d-flex flex-column justify-content-between '>
           <div className=''>

@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+/* MY STYLING */
+.shopnow {
+  background-color:#f5b22e;
+  border: none;  
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;  
+  border-radius: 10%;
+}
+
+.shopnow:hover {
+  background-color:#f5a810;
+  padding: 20px 38px; 
+}
+
+
+input{
+  background-color:#f5b22e;
+   border-radius: 10px; 
+   width: 100%;
+   color:white; 
+   padding:5%;
+   margin-bottom: 3%;
+}
+
+::placeholder{
+  color: black;
+  opacity: 1;
+}

@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Adpage from './pages/Adpage';
+import Catalog from './pages/Catalog';
+import Account from './pages/Account';
 
 function App() {
   const [user, setUser] = useState()
@@ -13,7 +15,7 @@ function App() {
     fetch("/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => {
-          console.log(user)
+          console.log("welcome back"+ user.username)
           setUser(user)
         });
         // console.log(user);
@@ -23,6 +25,8 @@ function App() {
     });    
   }, []);
 
+
+  
   // if (user) {
   //   return <h2>Welcome, {user.username}!</h2>;
   // } else {
@@ -46,7 +50,9 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<Signup getUserData={handleSetUser} />}></Route>
         <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
-        <Route path="/adpage" element={<Adpage user={user}/>}></Route>
+        <Route path="/adpage" element={<Adpage user={user} />}></Route>
+        <Route path="/catalog" element={<Catalog/>}></Route>
+        <Route path="/account" element={<Account user={user} />}></Route>
       </Routes>        
     </BrowserRouter>
   )   

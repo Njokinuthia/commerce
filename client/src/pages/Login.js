@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
-const Login = ({getUserData}) => {
+const Login = ({ getUserData }) => {
   let navigate = useNavigate();
   const [logInName, setLogInName] = useState("")
   const [logInPassword, setLogInPassword] = useState("")
@@ -20,7 +20,7 @@ const Login = ({getUserData}) => {
       }),
     })
       .then(resp => resp.json())
-      .then(data => {        
+      .then(data => {
         // console.log(data)
         getUserData(data)
       })
@@ -37,12 +37,15 @@ const Login = ({getUserData}) => {
   }
 
   return (
-    <div>
-    <Navbar/>
-      <form onSubmit={handleSubmit} className="formContainer login">
-        <h5 className='green'>Login</h5>
-        <div>
-          <div>
+    <>
+      <Navbar />
+      <div className='mx-20 flex flex-row justify-center mt-12 '>
+        {/* <img className="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75fXFG-SBy6_Z6n-UsJkT_YxbORsT688dBQ&usqp=CAU" alt="user"></img> */}
+
+      <form onSubmit={handleSubmit} className="">
+        <h5 className='text-green text-center text-4xl font-bold'>Login</h5>
+        <div className='mt-8 mb-4'>
+          <div className=''>
             <label htmlFor="username">Username:</label>
             <input type="text"
               placeholder="username"
@@ -50,7 +53,7 @@ const Login = ({getUserData}) => {
               onChange={(e) => setLogInName(e.target.value)}
               required />
           </div>
-          <div>
+          <div className=''>
             <label htmlFor="password">Password:</label>
             <input type="password"
               placeholder="Password"
@@ -59,10 +62,11 @@ const Login = ({getUserData}) => {
               required />
           </div>
         </div>
-        <p>Don't have an account?<span className="" onClick={toggleForms}>Sign Up</span></p>
-        <button type="submit" className="">Submit</button>
-      </form>
-    </div>
+        <p>Don't have an account?<span className="text-green font-bold" onClick={toggleForms}>Sign Up</span></p>
+        <button type="submit" className="shopnow">Submit</button>
+        </form>
+      </div>
+    </>
   )
 }
 
