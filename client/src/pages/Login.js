@@ -37,14 +37,14 @@ const Login = ({ getUserData }) => {
   }
 
   return (
-    <>
+    <div className='min-h-screen w-full bg-grey'>
       <Navbar />
-      <div className='mx-20 flex flex-row justify-center mt-12 '>
+      <div className='w-6/12 mg-auto flex flex-col mx-20 justify-center mt-8 '>
         {/* <img className="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75fXFG-SBy6_Z6n-UsJkT_YxbORsT688dBQ&usqp=CAU" alt="user"></img> */}
 
       <form onSubmit={handleSubmit} className="">
-        <h5 className='text-green text-center text-4xl font-bold'>Login</h5>
-        <div className='mt-8 mb-4'>
+        <h5 className='text-green mt-4 text-center text-4xl font-bold'>Login</h5>
+        <div className='mt-8 '>
           <div className=''>
             <label htmlFor="username">Username:</label>
             <input type="text"
@@ -62,11 +62,14 @@ const Login = ({ getUserData }) => {
               required />
           </div>
         </div>
-        <p>Don't have an account?<span className="text-green font-bold" onClick={toggleForms}>Sign Up</span></p>
-        <button type="submit" className="shopnow">Submit</button>
+          <p className='text-center'>Don't have an account?... <span className="text-green font-bold" onClick={toggleForms}>Sign Up</span></p>
+          <div className='mt-4 flex justify-center'>
+            <button type="submit" className="btn">Submit</button>
+          </div>
+        
         </form>
       </div>
-    </>
+    </div>
   )
 }
 

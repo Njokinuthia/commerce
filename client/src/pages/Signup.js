@@ -34,17 +34,19 @@ const Signup = ({getUserData}) => {
   function handleSubmit(event) {
     event.preventDefault()
     register()
+    
     // navigate("/shop) navigate to where it was
+    
   }
   return (
-    <div>
+    <div className='min-h-screen w-full bg-grey'>
       <Navbar />
-      <div className='grid justify-items-center'>
+      <div className='w-6/12 mg-auto flex flex-col mx-20 justify-center mt-8'>
         {/* <FontAwesomeIcon icon={['fas', 'faCoffee']} /> */}
 
         <form onSubmit={handleSubmit} className="">
-          <h5 className=''>Sign Up</h5>
-          <div>
+          <h5 className='flex flex-col text-green text-center text-4xl font-bold mt-4'>Sign Up</h5>
+          <div className='mt-8 mb-4'>
             <div>
               <label htmlFor="username">Username:</label>
               <input type="text"
@@ -71,7 +73,9 @@ const Signup = ({getUserData}) => {
             </div>
 
           </div>
-          <button type="submit" className="">Submit</button>
+          <div className='mt-4 flex justify-center'>
+            <button type="submit" className="btn">Submit</button>
+          </div>
         </form>
 
       </div>
