@@ -35,9 +35,13 @@ const Signup = ({getUserData}) => {
     event.preventDefault()
     register()
     
-    // navigate("/shop) navigate to where it was
-    
+    // navigate("/shop) navigate to where it was    
   }
+
+  function toggleForms() {
+    navigate("/login")
+  }
+
   return (
     <div className='min-h-screen w-full bg-grey'>
       <Navbar />
@@ -71,10 +75,12 @@ const Signup = ({getUserData}) => {
                 onChange={(e) => setSignUpPassword(e.target.value)}
                 required />
             </div>
-
           </div>
+
+          <p className='text-center'>Already have an account?... <span className="text-green font-bold" onClick={toggleForms}>LogIn</span></p>
+
           <div className='mt-4 flex justify-center'>
-            <button type="submit" className="btn">Submit</button>
+            <button type="submit" className="btn text-white">Submit</button>
           </div>
         </form>
 

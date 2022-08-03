@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Navbar from '../components/Navbar'
 import Card from '../components/Card'
-
-
 
 const Catalog = () => {
   const [items, setItems] = useState()
@@ -14,8 +13,7 @@ const Catalog = () => {
         console.log(itemsData)
         setItems(itemsData)
       })
-  }, [])
-  
+  }, [])  
 
  
   let itemCard = items?.map(item =>
@@ -30,11 +28,11 @@ const Catalog = () => {
   )
 
   return (
-    <div className='border'>
-      {/* <Navbar /> */}
+    <div className='min-h-screen bg-grey '>
+      <Navbar />
       <h3 className=''>Category: Beds</h3>
       <div className=''>
-        <div className='d-flex flex-wrap'>
+        <div className=' border flex flex-wrap'>
           {itemCard}
         </div>
       </div>

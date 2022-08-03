@@ -51,8 +51,13 @@ function App() {
         <Route path="/signup" element={<Signup getUserData={handleSetUser} />}></Route>
         <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
         <Route path="/adpage" element={<Adpage user={user} />}></Route>
-        <Route path="/catalog" element={<Catalog/>}></Route>
-        <Route path="/account" element={<Account user={user} />}></Route>
+        <Route path="/catalog" element={<Catalog />}></Route>
+        {user ? (
+          <Route path="/account" element={<Account user={user} />}></Route>
+        ) : 
+          <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
+
+        }
       </Routes>        
     </BrowserRouter>
   )   

@@ -96,3 +96,26 @@ input{
 .mg-auto{
   margin: auto;
 }
+
+.card{
+  border-radius: 10px;
+  /* width: 30%; */
+  padding: 10px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+  align-items: left;
+  background-color:white; 
+    border-top-left-radius:10px ;
+  border-top-right-radius:10px ;
+ 
+}
+
+.imageDiv{
+  border-top-left-radius:10px ;
+  border-top-right-radius:10px ;
+  height: 70%;
+  background-color:red; 
+
+
+}

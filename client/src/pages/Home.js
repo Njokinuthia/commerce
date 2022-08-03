@@ -12,9 +12,9 @@ const Home = () => {
   }
 
   return (
-    <div className='min-h-screen border '>
+    <div className='min-h-screen bg-grey border '>
       <Navbar />
-      <div className='px-10 my-4  mx-12'>
+      <div className='px-10 my-4 mx-12'>
         <div className=' flex flex-row justify-between'>
           <div>
             <h2 className='mt-10 mb-8 text-5xl text-blackish'>Buy <span className='text-green'>and</span> Sell</h2>

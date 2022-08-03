@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { useNavigate } from 'react-router-dom'
 
 const navigation = [
  
@@ -20,10 +21,18 @@ function handleLogout(e) {
   fetch("/logout", {
     method: "DELETE",
   }).then(() => console.log("logged out"));
-
 }
 
+
 export default function Example() {
+  let navigate = useNavigate();
+
+  function handleLogIn(e) {
+    e.preventDefault();
+    console.log("clicked")
+    navigate("/login")
+  }
+
   return (
     <Disclosure as="nav" className="bg-green">
       {({ open }) => (
@@ -67,25 +76,21 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+              
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      {/* <img
                         className="h-8 w-8 rounded-full"
                         src="https://thumbs.dreamstime.com/b/user-icon-vector-people-profile-person-illustration-business-users-group-symbol-male-195160429.jpg"
                         alt=""
-                      />
+                      /> */}
                     </Menu.Button>
+                    <button onClick={handleLogIn} className='h-8 w-auto '>LogIn</button>
+
                   </div>
                   <Transition
                     as={Fragment}
