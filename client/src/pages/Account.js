@@ -1,42 +1,62 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Ads from '../components/Ads'
 
 
 const Account = ({ user }) => {
-  let adCard=[]
-  if (user!= null) {
+  let navigate = useNavigate()
+  let adCard = []
+  if (user != null) {
     adCard = user.items?.map(item =>
-    <Ads
-      key={item.id}
-      image={item.image_url}
-      description={item.description}
-      condition={item.condition}
-      price={item.price}
-    />
-  )
+      <Ads
+        key={item.id}
+        image={item.image_url}
+        description={item.description}
+        condition={item.condition}
+        price={item.price}
+      />
+    )
+  }
+
+  function handleOnClick(e) {
+    e.preventDefault();
+    navigate("/adpage")
   }
 
   return (
     <div className='min-h-screen bg-grey'>
       <Navbar />
       {user ? (
-        <div>
-          <p>Welcome, {user.username}!</p>
-          <div className='flex flex-col'>
-            <h2>Personal Details</h2>
-            <div>
-              <p className='text-green'>Username:</p>
-              <h4>{user.username}</h4>
+        <div className='items-centerflex flex-col flex-wrap'>
+          <p className='text-center'>Welcome <span className='text-green '>{user.username} </span></p>
+          <div className='flex'>
+            <div className='ml-12 pl-12 w-1/4 flex flex-col'>
+              <div className='h-1'>
+                <img src="" alt="profile"></img>
+
+              </div>
+              <h2 className='text-green text-4xl font-semibold'>Profile</h2>
+
+              <h2 className='text-green text-2xl font-semibold'>Personal Details</h2>
+              <div>
+                <p className='text-green '>Username:</p>
+                <h4 className='text-xl'>{user.username}</h4>
+              </div>
+              <div>
+                <p className='text-green'>Email Address:</p>
+                <h4 className='text-xl'>{user.email}</h4>
+              </div>
+              <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green'>Post Ad</button>
+
             </div>
-            <div>
-              <p className='text-green'>Email Address:</p>
-              <h4>{user.email}</h4>
-            </div>
+            <div className='w-3/4'>{adCard}</div>
           </div>
-          <div className=''>{adCard}</div>
+
         </div>
+        
+
       ) : (
         <p>Log in</p>
       )}
