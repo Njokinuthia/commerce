@@ -47,9 +47,8 @@ const Account = ({ user }) => {
           <p className='text-center'>Welcome <span className='text-green '>{user.username} </span></p>
           <div className='flex'>
             <div className='ml-12 pl-12 w-1/4 flex flex-col'>
-              <div className='h-1'>
+              <div className='border'>
                 <img src="" alt="profile"></img>
-
               </div>
               <h2 className='text-green text-4xl font-semibold'>Profile</h2>
 
@@ -63,14 +62,10 @@ const Account = ({ user }) => {
                 <h4 className='text-xl'>{user.email}</h4>
               </div>
               <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green'>Post Ad</button>
-
-            </div>
-            
+            </div>            
             <div className='w-3/4'>{adCard}</div>
           </div>
-
-        </div>
-        
+        </div>     
 
       ) : (
         <p>Log in</p>

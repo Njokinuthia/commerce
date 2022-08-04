@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useNavigate } from 'react-router-dom'
@@ -19,20 +19,24 @@ function classNames(...classes) {
 
 export default function Example({ user }) {
   let navigate = useNavigate();
+  const [loggedIn, setLoggedIn] = useState(false)
+  // const [login, setLogin] = useState(false);
 
-  // useEffect(() => {
-  //   fetch("/me").then((response) => {
-  //     if (response.ok) {
-  //       response.json().then((user) => {
-  //         console.log("welcome back" + user.username)      
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => {
+          console.log("welcome back" + user.username) 
+          setLoggedIn(user)
 
-  //       });
-  //     } else {
-  //       console.log("please log in");
-  //     }
-  //   });
-  // }, []);
-  console.log(user)
+        });
+      } else {
+        console.log("please log in");
+      }
+    });
+  }, []);
+
+  console.log(loggedIn)
   function handleLogIn(e) {
     e.preventDefault();
     // console.log("nav click")  
@@ -70,8 +74,8 @@ export default function Example({ user }) {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <h2 className="block lg:hidden h-8 w-auto">Declutter</h2>
-                  <h2 className="hidden lg:block h-8 w-auto">Declutter</h2>
+                  <h2 className="block lg:hidden h-8 w-auto ">Declutter</h2>
+                  <h2 className="hidden lg:block h-8 w-auto ">Declutter</h2>
 
 
                 </div>
@@ -107,14 +111,21 @@ export default function Example({ user }) {
                         alt=""
                       /> */}
                     </Menu.Button>
-                    {/* {user?(
-                      <button onClick={handleLogout} className='h-8 w-auto '>LogOut</button>
+                    {/* {loggedIn!=null?(
+                      <button onClick={handleLogout} className='h-8 w-auto'>LogOut</button>
                     ):(
                       <button onClick={handleLogIn} className='h-8 w-auto '>LogIn</button>
                     )} */}
 
-                    <button onClick={handleLogout} className='h-8 w-auto '>LogOut</button>
-                    <button onClick={handleLogIn} className='h-8 w-auto '>LogIn</button>
+                    <div className='flex flex-col'>
+                      <button onClick={handleLogIn} className='h-8 w-auto font-bold '>LOGIN</button>
+                      <button onClick={handleLogout} className='h-8 w-auto font-bold'>LOGOUT</button>
+                    </div>
+                    
+                 
+                    {/* <button onClick={() => setLoggedIn(!loggedIn)}>{loggedIn ? "Login" : "Log out"}</button> */}
+
+                    
 
 
                   </div>

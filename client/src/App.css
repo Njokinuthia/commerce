@@ -124,12 +124,9 @@ input{
 }
 
 .fadeIn-overlay {
-  /* display: none;   */
-  top: 0%;
-  /* margin-left: 3%; */
+  top: 0%; 
   padding: 20% 10%;
   background:rgba(0,0,0,0.8);
   color: white;
-  font-weight: bold;
-  /* border: 3px solid white; */
+  font-weight: bold; 
 }

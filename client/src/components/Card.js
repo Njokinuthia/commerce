@@ -4,8 +4,7 @@ import { useState } from 'react';
 const Card = ({ image, price, description, contact, seller }) => {
   const [display, setDisplay] = useState(false)
   function displayContacts(e) {
-    e.preventDefault();
-    console.log("ok")
+    e.preventDefault();   
     setDisplay(!display)
   }
   return (

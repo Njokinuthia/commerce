@@ -31,6 +31,8 @@ const Login = ({ getUserData }) => {
   function handleSubmit(event) {
     event.preventDefault()
     logIn()
+    navigate("/account")
+
   }
 
   function toggleForms() {

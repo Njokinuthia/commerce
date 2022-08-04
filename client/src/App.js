@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Redirect } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -10,6 +11,7 @@ import Catalog from './pages/Catalog';
 import Account from './pages/Account';
 
 function App() {
+  // let navigate = useNavigate()
   const [user, setUser] = useState()
 
   useEffect(() => {
@@ -54,12 +56,15 @@ function App() {
         <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
         <Route path="/adpage" element={<Adpage user={user} />}></Route>
         <Route path="/catalog" element={<Catalog />}></Route>
-        {user ? (
+        {user!=null? (
           <Route path="/account" element={<Account user={user} />}></Route>
         ) : 
-          <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
-
+          <Route path="/account" element={<Login getUserData={handleSetUser} />}></Route>
         }
+
+        {/* <Route path="/account">
+          {user ? <Account user={user} /> : navigate("/login")}
+        </Route> */}
       </Routes>        
     </BrowserRouter>
   )   

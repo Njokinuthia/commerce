@@ -73,10 +73,7 @@ const Adpage = ({ user}) => {
         <form className='mt-12' onSubmit={handleSubmit}>
           <h5 className='text-green my-4 text-center text-4xl font-bold'>Post An Ad</h5>
           <div className='d-flex flex-column justify-content-between'>
-            <div className=''>
-              <div>
-                <input type="text" placeholder="Category" name="category" value={newAd.category} onChange={handleChange} required />
-              </div>
+            <div className=''>       
 
               <div>
                 <input type="text" placeholder="Item Condition" name="condition" value={newAd.condition} onChange={handleChange} required />
