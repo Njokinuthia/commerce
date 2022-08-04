@@ -42,8 +42,8 @@ const Account = ({ user }) => {
       {user ? (
         <div className='items-centerflex flex-col flex-wrap'>
           <p className='text-center'>Welcome <span className='text-green '>{user.username} </span></p>
-          <div className='flex'>
-            <div className='ml-12 pl-12 w-1/4 flex flex-col'>          
+          <div className='md:flex'>
+            <div className='md:ml-12 sm:pl-6 md:pl-12 md:w-1/4 flex flex-col'>          
               <h2 className='text-green text-4xl font-semibold my-4'>Profile</h2>
 
               <h2 className='text-green text-2xl font-semibold mb-2'>Personal Details:</h2>
@@ -57,7 +57,9 @@ const Account = ({ user }) => {
               </div>
               <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green btn text-white px-2'>Post Ad</button>
             </div>            
-            <div className='w-3/4'>{adCard}</div>
+            {/* <div className='md:flex sm:flex-row md:flex-col md:w-3/4'>{adCard}</div> */}
+            <div className='mt-12 w-5/6 h-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>{adCard}</div>
+
           </div>
         </div>     
 

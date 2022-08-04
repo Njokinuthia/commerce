@@ -21,7 +21,7 @@ const Ads = ({ id, image, price, description,reload }) => {
   // function handleEdit() {}//
   
   return (
-    <div className='flex justify-around items-center my-6'>
+    <div className='flex sm:flex-col md:bg-grey md:flex-row md:justify-around items-center my-6'>
       <div className='w-1/6 my-2'>
         <img src={image} alt="item" height="50%" width="100%"></img>
       </div>
