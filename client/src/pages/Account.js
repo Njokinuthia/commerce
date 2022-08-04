@@ -6,16 +6,25 @@ import Ads from '../components/Ads'
 
 
 const Account = ({ user }) => {
+  const [items, setItems] = useState()
   let navigate = useNavigate()
   let adCard = []
+
+  function reload(e) {
+    e.preventDefault()
+    window.location.reload(false);
+  }
+ 
   if (user != null) {
     adCard = user.items?.map(item =>
       <Ads
         key={item.id}
+        id={item.id}
         image={item.image_url}
         description={item.description}
         condition={item.condition}
         price={item.price}
+        reload={reload}
       />
     )
   }
@@ -24,6 +33,9 @@ const Account = ({ user }) => {
     e.preventDefault();
     navigate("/adpage")
   }
+
+ 
+
 
   return (
     <div className='min-h-screen bg-grey'>
@@ -51,6 +63,7 @@ const Account = ({ user }) => {
               <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green'>Post Ad</button>
 
             </div>
+            
             <div className='w-3/4'>{adCard}</div>
           </div>
 

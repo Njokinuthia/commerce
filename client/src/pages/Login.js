@@ -40,8 +40,7 @@ const Login = ({ getUserData }) => {
   return (
     <div className='min-h-screen w-full bg-grey'>
       <Navbar />
-      <div className='w-6/12 mg-auto flex flex-col mx-20 justify-center mt-8 '>
-        {/* <img className="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75fXFG-SBy6_Z6n-UsJkT_YxbORsT688dBQ&usqp=CAU" alt="user"></img> */}
+      <div className='w-6/12 mg-auto flex flex-col mx-20 justify-center mt-8 '>       
 
         <form onSubmit={handleSubmit} className="">
           <h5 className='text-green mt-4 text-center text-4xl font-bold'>Login</h5>

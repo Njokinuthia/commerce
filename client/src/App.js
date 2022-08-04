@@ -18,7 +18,6 @@ function App() {
           console.log("welcome back"+ user.username)
           setUser(user)
         });
-        // console.log(user);
       } else {
         console.log("please log in");
       }

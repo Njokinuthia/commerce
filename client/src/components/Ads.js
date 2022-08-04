@@ -1,6 +1,31 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Ads = ({ image, price, description }) => {
+
+const Ads = ({ id, image, price, description,reload }) => {
+  let navigate = useNavigate()
+
+
+  function handleDelete(e) {
+    console.log(id)
+    e.preventDefault();
+    fetch(`/items/${id}`, {
+      method: 'DELETE'
+    })
+      .then(res => {
+        if (res.ok) {
+          console.log(res)
+          // navigate("/account")
+          reload(e)
+        } else {
+          res.json().then(console.log("error"))
+        }
+      })
+  }
+
+  function handleEdit() {
+
+  }
   return (
     <div className='flex justify-around items-center my-6'>
       <div className='w-1/6 my-2'>
@@ -11,9 +36,9 @@ const Ads = ({ image, price, description }) => {
       <p className='text-green font-semibold'>Ksh{price} </p>
       <div className='text-white'>
         <button className='btn'>Edit</button>
-        <button className='btn'>Remove</button>
+        <button className='btn' onClick={handleDelete}>Remove</button>
       </div>
-      
+
     </div>
   )
 }
