@@ -17,8 +17,8 @@ const Home = () => {
       <div className='px-4 mx-4 sm:px-10 my-4 sm:mx-12'>
         <div className=' flex flex-row justify-between flex-wrap'>
           <div>
-            <h2 className='mt-10 mb-8 text-5xl text-blackish'>Buy <span className='text-green'>and</span> Sell</h2>
-            <h2 className="my-4 text-5xl text-blackish"> Pre<span className='text-green'>-loved furniture</span></h2>
+            <h2 className='mt-10 mb-8 text-5xl text-blackish font-bold'>Buy <span className='text-green'>and</span> Sell</h2>
+            <h2 className="my-4 text-5xl text-blackish font-bold"> Pre<span className='text-green'>-loved furniture</span></h2>
             <p className='text-xl my-2'>Declutter your space</p>
             <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green'>Shop Now</button>
           </div>

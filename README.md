@@ -1,6 +1,6 @@
-# DECLUTTER
+# Furniture
 
-## Independent Project phase3 FlatIron -core Moringa
+## Independent Project phase4 FlatIron -core Moringa
 
 ##### By Eunice Njoki Kinuthia
 

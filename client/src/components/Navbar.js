@@ -15,26 +15,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-
 export default function Example({ user }) {
   let navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false)
   // const [login, setLogin] = useState(false);
 
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => {
-          console.log("welcome back" + user.username) 
-          setLoggedIn(user)
-
-        });
-      } else {
-        console.log("please log in");
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/me").then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => {
+  //         console.log("welcome back" + user.username) 
+  //         setLoggedIn(user)
+  //       });
+  //     } else {
+  //       console.log("please log in");
+  //     }
+  //   });
+  // }, []);
 
   console.log(loggedIn)
   function handleLogIn(e) {
@@ -124,8 +121,7 @@ export default function Example({ user }) {
                     
                  
                     {/* <button onClick={() => setLoggedIn(!loggedIn)}>{loggedIn ? "Login" : "Log out"}</button> */}
-
-                    
+             
 
 
                   </div>

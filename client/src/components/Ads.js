@@ -18,9 +18,7 @@ const Ads = ({ id, image, price, description,reload }) => {
       })
   }
 
-  function handleEdit() {
-
-  }
+  // function handleEdit() {}//
   
   return (
     <div className='flex justify-around items-center my-6'>
@@ -30,10 +28,9 @@ const Ads = ({ id, image, price, description,reload }) => {
       <p>{description}</p>
       <p className='text-green font-semibold'>Ksh{price} </p>
       <div className='text-white'>
-        <button className='btn'>Edit</button>
+        {/* <button className='btn'>Edit</button> */}
         <button className='btn' onClick={handleDelete}>Remove</button>
       </div>
-
     </div>
   )
 }
