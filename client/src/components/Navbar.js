@@ -3,10 +3,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useNavigate } from 'react-router-dom'
-
+import { useEffect } from 'react'
 const navigation = [
- 
-  { name: 'Home', href: '/', current: true},
+
+  { name: 'Home', href: '/', current: true },
   { name: 'Account', href: '/account', current: false },
   { name: 'Shop', href: '/catalog', current: false },
 ]
@@ -15,23 +15,41 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-function handleLogout(e) {
-  e.preventDefault();
-  console.log("clicked")
-  fetch("/logout", {
-    method: "DELETE",
-  }).then(() => console.log("logged out"));
-}
 
 
-export default function Example() {
+export default function Example({ user }) {
   let navigate = useNavigate();
 
+  // useEffect(() => {
+  //   fetch("/me").then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => {
+  //         console.log("welcome back" + user.username)      
+
+  //       });
+  //     } else {
+  //       console.log("please log in");
+  //     }
+  //   });
+  // }, []);
+  console.log(user)
   function handleLogIn(e) {
     e.preventDefault();
-    console.log("clicked")
+    // console.log("nav click")  
     navigate("/login")
   }
+
+  function handleLogout(e) {
+    e.preventDefault();
+    console.log("clicked")
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(() => {
+      // console.log("logged out")
+      navigate("/")
+    });
+  }
+
 
   return (
     <Disclosure as="nav" className="bg-green">
@@ -53,9 +71,9 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <h2 className="block lg:hidden h-8 w-auto">Declutter</h2>
-                  <h2 className="hidden lg:block h-8 w-auto">Declutter</h2>          
-                  
-                 
+                  <h2 className="hidden lg:block h-8 w-auto">Declutter</h2>
+
+
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -76,7 +94,7 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              
+
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
@@ -89,7 +107,15 @@ export default function Example() {
                         alt=""
                       /> */}
                     </Menu.Button>
+                    {/* {user?(
+                      <button onClick={handleLogout} className='h-8 w-auto '>LogOut</button>
+                    ):(
+                      <button onClick={handleLogIn} className='h-8 w-auto '>LogIn</button>
+                    )} */}
+
+                    <button onClick={handleLogout} className='h-8 w-auto '>LogOut</button>
                     <button onClick={handleLogIn} className='h-8 w-auto '>LogIn</button>
+
 
                   </div>
                   <Transition
@@ -111,7 +137,7 @@ export default function Example() {
                             Your Profile
                           </a>
                         )}
-                      </Menu.Item>                      
+                      </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a

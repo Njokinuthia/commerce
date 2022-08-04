@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 
 
 
-const Adpage = ({ user }) => {
+const Adpage = ({ user}) => {
   let navigate = useNavigate()
 
   // function handleDeleteToy(toyToDelete) {
@@ -51,6 +51,8 @@ const Adpage = ({ user }) => {
       .catch((error) => {
         console.log("your error:" + error)
       })
+    
+
 
     setNewAd({
       category: "",
@@ -60,7 +62,7 @@ const Adpage = ({ user }) => {
       description: "",
       user_id: ""
     })
-    // navigate("/account")
+    navigate("/account")
   }
 
 

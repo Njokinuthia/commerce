@@ -10,10 +10,15 @@ const Account = ({ user }) => {
   let navigate = useNavigate()
   let adCard = []
 
+  // useEffect(() => {
+  //   window.location.reload(false);
+  // },[])
+
   function reload(e) {
     e.preventDefault()
     window.location.reload(false);
   }
+  
  
   if (user != null) {
     adCard = user.items?.map(item =>
@@ -33,9 +38,6 @@ const Account = ({ user }) => {
     e.preventDefault();
     navigate("/adpage")
   }
-
- 
-
 
   return (
     <div className='min-h-screen bg-grey'>

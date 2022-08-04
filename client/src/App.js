@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Navbar from './components/Navbar'
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -47,6 +48,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/navbar" element={<Navbar user={user} />}></Route>
+
         <Route path="/signup" element={<Signup getUserData={handleSetUser} />}></Route>
         <Route path="/login" element={<Login getUserData={handleSetUser} />}></Route>
         <Route path="/adpage" element={<Adpage user={user} />}></Route>

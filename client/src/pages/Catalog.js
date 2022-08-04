@@ -22,7 +22,7 @@ const Catalog = () => {
       image={item.image_url}
       price={item.price}  //     
       description={item.description}
-    // contact={item.user.email}
+    contact={item.user.email}
     // seller={item.user.username}
     />
   )
@@ -32,7 +32,7 @@ const Catalog = () => {
       <Navbar />
       <h3 className=''>Category: Beds</h3>
       <div className=''>
-        <div className=' border flex flex-wrap'>
+        <div className='mt-12 w-5/6 h-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {itemCard}
         </div>
       </div>
