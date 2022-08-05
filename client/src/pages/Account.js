@@ -57,8 +57,8 @@ const Account = ({ user }) => {
               </div>
               <button onClick={handleOnClick} className='font-bold my-8 shopnow text-green btn text-white px-2'>Post Ad</button>
             </div>            
-            {/* <div className='md:flex sm:flex-row md:flex-col md:w-3/4'>{adCard}</div> */}
-            <div className='mt-12 w-5/6 h-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>{adCard}</div>
+            <div className='md:flex sm:flex md:flex-col md:w-3/4'>{adCard}</div>
+            {/* <div className='mt-12 w-5/6 h-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>{adCard}</div> */}
 
           </div>
         </div>     
